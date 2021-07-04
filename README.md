@@ -1,2 +1,2 @@
 # Ontology-Design
-This repository contain ontology design for the Bank Domain.
+This repository contains ontology design for the Bank Domain.
