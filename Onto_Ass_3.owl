@@ -1,0 +1,802 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#"
+     xml:base="http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7">
+        <rdfs:comment>A Bank ontology that describes all Branch related details of the bank</rdfs:comment>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#Borrows -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#Borrows">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#Loan"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#Account"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#Customer"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#affiliatedTo -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#affiliatedTo">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#Branch"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#Bank"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#answerQuery -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#answerQuery">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#CustomerCare"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#Customer"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#asksQuery -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#asksQuery">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#Customer"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#CustomerCare"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#belongsTo -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#belongsTo">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#Account"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#Customer"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#deposits -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#deposits">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#Customer"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#Account"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#Transactions"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#hasPaymentAmount -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#hasPaymentAmount">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#Payment"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#Amount"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#havingPayment -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#havingPayment">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#Payment"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#PaymentNumber"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#maintains -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#maintains">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#Employee"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#Branch"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#manages -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#manages">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#Technician"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#Account"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#offers -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#offers">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#Branch"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#FinancialServices"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#oversees -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#oversees">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#Manager"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#Employee"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#owns -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#owns">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#Customer"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#Account"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#responsibleFor -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#responsibleFor">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#CustomerSupport"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#Customer"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#withdraw -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#withdraw">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#Customer"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#Amount"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#worksAt -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#worksAt">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#Employee"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#Branch"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#worksUnder -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#worksUnder">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#Employee"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#Manager"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#accountNumber -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#accountNumber">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#Account"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#amount_Loan -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#amount_Loan">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#AgricullturalLoan"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#EducationLoan"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#RealEstateLoan"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#VehicleLoan"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#area -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#area">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#Branch"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#bank_name -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#bank_name">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#Bank"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#c_name -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#c_name">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#Customer"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#e_name -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#e_name">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#Employee"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#ATM -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#ATM">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#FinancialServices"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#ATMUniqueID -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#ATMUniqueID">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#ATM"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#Account -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#Account">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#CurrentAccount"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#FixedDepositAccount"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#SavingAccount"/>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#belongsTo"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#Bank"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#Person"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#AgricullturalLoan -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#AgricullturalLoan">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#Loan"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#Amount -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#Amount">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#Account"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#Bank -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#Bank">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#BasicAccount -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#BasicAccount">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#Account"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#Borrower -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#Borrower">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#Customer"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#Borrows"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#Loan"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#Branch -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#Branch">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#Bank"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#offers"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#FinancialServices"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#CurrentAccount -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#CurrentAccount">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#Account"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#Customer -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#Customer">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#Person"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#asksQuery"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#CustomerCare"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#owns"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#Account"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#CustomerCare -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#CustomerCare">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#Employee"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#answerQuery"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#Customer"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#CustomerSupport -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#CustomerSupport">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#Employee"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#responsibleFor"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#Customer"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#Depositor -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#Depositor">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#Customer"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#deposits"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#cash"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#deposits"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#cheque"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#EducationLoan -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#EducationLoan">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#Loan"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#Employee -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#Employee">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#CustomerCare"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#Manager"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#Technician"/>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#Person"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#worksAt"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#Branch"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#FinancialServices -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#FinancialServices">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#FixedDepositAccount -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#FixedDepositAccount">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#Account"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#Loan -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#Loan">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#FinancialServices"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#Manager -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#Manager">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#Employee"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#oversees"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#Employee"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#Payment -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#Payment">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#FinancialServices"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#havingPayment"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#Amount"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#havingPayment"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#PaymentNumber"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#PaymentNumber -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#PaymentNumber">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#Payment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#Person -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#Person">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#Customer"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#Employee"/>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#RealEstateLoan -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#RealEstateLoan">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#Loan"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#SavingAccount -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#SavingAccount">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#Account"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#Technician -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#Technician">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#Employee"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#maintains"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#ATM"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#TransactionID -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#TransactionID">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#Transactions"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#Transactions -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#Transactions">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#cash"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#cheque"/>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#FinancialServices"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#VehicleLoan -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#VehicleLoan">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#Loan"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#cash -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#cash">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#Transactions"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#cheque -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#cheque">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#Transactions"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#account -->
+
+    <owl:Thing rdf:about="http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#account">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#Account"/>
+        <accountNumber>acc1</accountNumber>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#bank_Swiss -->
+
+    <owl:Thing rdf:about="http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#bank_Swiss">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#Bank"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#Branch"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#FinancialServices"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#Payment"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#Person"/>
+        <bank_name>Swiss Bank</bank_name>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#branch_Bern -->
+
+    <owl:Thing rdf:about="http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#branch_Bern">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#Bank"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#Branch"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#FinancialServices"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#Person"/>
+        <area>Bern, Switzerland</area>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#customer1 -->
+
+    <owl:Thing rdf:about="http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#customer1">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#Customer"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#Person"/>
+        <c_name>Aditya Kumar</c_name>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#customer2 -->
+
+    <owl:Thing rdf:about="http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#customer2">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#Customer"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#Person"/>
+        <c_name>Aman Kumar</c_name>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#customer3 -->
+
+    <owl:Thing rdf:about="http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#customer3">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#Customer"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#Person"/>
+        <c_name>Shree Kanti</c_name>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#customer4 -->
+
+    <owl:Thing rdf:about="http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#customer4">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#Customer"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#Person"/>
+        <c_name>Himani  Shrotriya</c_name>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#customer5 -->
+
+    <owl:Thing rdf:about="http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#customer5">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#Customer"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#Person"/>
+        <c_name>Shreyas Jain</c_name>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#employee1 -->
+
+    <owl:Thing rdf:about="http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#employee1">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#Employee"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#Manager"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#Person"/>
+        <e_name>Mark Zuckerbarg</e_name>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#employee2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#employee2">
+        <rdf:type rdf:resource="http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#Employee"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#Person"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#Technician"/>
+        <e_name>Bill Gates</e_name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#loan1 -->
+
+    <owl:Thing rdf:about="http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#loan1">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#Account"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#FinancialServices"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#Loan"/>
+        <amount_Loan rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">200000</amount_Loan>
+    </owl:Thing>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
+        <owl:distinctMembers rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#account"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#bank_Swiss"/>
+        </owl:distinctMembers>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
+        <owl:distinctMembers rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#branch_Bern"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#customer1"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#customer2"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#customer3"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#customer4"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#customer5"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#employee1"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#employee2"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/adityakumar/ontologies/2021/4/untitled-ontology-7#loan1"/>
+        </owl:distinctMembers>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+

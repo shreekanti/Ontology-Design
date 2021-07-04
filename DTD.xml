@@ -1,0 +1,490 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Bank
+[
+
+<!--This document models on bank, and can handle many branches(at least one)-->
+<!ELEMENT Bank (branch+)>
+<!ATTLIST Bank branch CDATA #FIXED "Swiss Bank">
+
+<!--A Branch has branch data, customers and at least one employee and atm-->
+<!ELEMENT branch (branch_data, customer*, employee+, atm+)>
+<!--Branch data of a bank includes name and its address-->
+<!ELEMENT branch_data (address, name?)>
+<!ELEMENT address (#PCDATA)>
+
+<!--A customer has some personal data, at least one accounnt and it can have any number of loan-->
+<!ELEMENT customer (personal_data, account+, loan*)>
+<!ATTLIST customer customer_id ID #REQUIRED>
+<!ATTLIST customer customer_since_years CDATA "0">
+
+<!--The personal data of a person has name, address and DOB-->
+<!ELEMENT personal_data (name, date_of_birth, address)>
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT date_of_birth (#PCDATA)>
+
+<!--An acccount is identified by account number, and contains it's balance as well as transactions-->
+<!ELEMENT account (balance, transactions*)>
+<!--Most account are basic accounts, that can be accessed any time, however an account could also be a saving accounts-->
+<!ATTLIST account account_type (saving_account|basic_account) "basic_account">
+<!ATTLIST account account_no ID #REQUIRED>
+<!ELEMENT balance (#PCDATA)>
+
+<!--A transaction can be transfer from one account to another, deposit or withdrawal, and every transaction is done on a date-->
+<!ELEMENT transactions (date, (transfer|withdraw|deposit))>
+<!ELEMENT date (#PCDATA)>
+<!ELEMENT deposit (amount)>
+<!ELEMENT withdraw (amount)>
+<!--The transfer contain amount and account_no of involved account-->
+<!ELEMENT transfer (amount)>
+<!ATTLIST transfer from IDREF #REQUIRED>
+<!ATTLIST transfer to IDREF #REQUIRED>
+
+<!--A loan is identified by  ID, has an amount, interest rate and maximum duration-->
+<!ELEMENT loan (amount)>
+<!--There exist different type of loans, to group loans with similiar conditions-->
+<!--A loan can be of different types like vehicle,real estate etc-->
+<!ATTLIST loan loan_type (vehicle_loan|real_estate_loan|agricultural_loan|education_loan|personal_loan) #IMPLIED>
+<!ATTLIST loan max_duration CDATA #IMPLIED>
+<!ATTLIST loan loan_number ID #REQUIRED>
+<!ELEMENT amount (#PCDATA)>
+<!ELEMENT interest (#PCDATA)>
+
+<!--Each ATM is filled with money, can be specified using it's individual ID and saves the days until the next routine check-->
+<!ELEMENT atm (#PCDATA)>
+<!ATTLIST atm atm_id ID #REQUIRED>
+<!ATTLIST atm days_to_maintainance CDATA "60">
+
+<!--An employee is described by his personal data, salary, job and an  ID-->
+<!ELEMENT employee (personal_data, (manager|customer_care|customer_support|technician))>
+<!ATTLIST employee employee_id ID #REQUIRED>
+<!ATTLIST employee salary CDATA #IMPLIED>
+
+<!ELEMENT manager EMPTY>
+<!ATTLIST manager subordinates IDREFS #REQUIRED> 
+
+<!ELEMENT customer_care EMPTY>
+<!ATTLIST customer_care responsible_for IDREFS #REQUIRED>
+
+<!ELEMENT customer_support EMPTY>
+<!ATTLIST customer_support responsible_for IDREFS #REQUIRED>
+
+<!ELEMENT technician EMPTY>
+<!ATTLIST technician maintains IDREFS #REQUIRED>
+
+
+]>
+
+<Bank branch="Swiss Bank">
+    <branch>
+		<branch_data>
+			<address>
+				Bern,Switzerland
+			</address>
+			<name>
+				Central Bank
+			</name>
+		</branch_data>
+		
+		<customer customer_id="cust1" customer_since_years="1">
+			<personal_data>
+				<name>Aditya Kumar</name>
+				<date_of_birth>1999-02-05</date_of_birth>
+				<address>Bihar</address>
+			</personal_data>
+			<account account_type="basic_account" account_no="acc1">
+				<balance>1000000000</balance>
+				<transactions>
+					<date>2021-02-01</date>
+					<withdraw><amount>10000</amount></withdraw>
+				</transactions>
+				<transactions>
+					<date>2021-02-02</date>
+					<deposit><amount>20000</amount></deposit>
+				</transactions>
+				<transactions>
+					<date>2021-02-03</date>
+					<deposit><amount>2500</amount></deposit>
+				</transactions>
+			</account>
+		</customer>
+		
+		<customer customer_id="cust2" customer_since_years="1">
+			<personal_data>
+				<name>Aman Kumar</name>
+				<date_of_birth>1999-02-06</date_of_birth>
+				<address>Jharkhand</address>
+			</personal_data>
+			<account account_type="basic_account" account_no="acc2">
+				<balance>1100000000</balance>
+				<transactions>
+					<date>2021-02-02</date>
+					<deposit><amount>80000</amount></deposit>
+				</transactions>
+				<transactions>
+					<date>2021-02-20</date>
+					<withdraw><amount>30000</amount></withdraw>
+				</transactions>
+			</account>
+			<account account_type="basic_account" account_no="acc3">
+				<balance>1</balance>
+				<transactions>
+					<date>2021-02-03</date>
+					<deposit><amount>1</amount></deposit>
+				</transactions>
+			</account>
+		</customer>
+		
+		<customer customer_id="cust3" customer_since_years="1">
+			<personal_data>
+				<name>Himani Shrotriya</name>
+				<date_of_birth>1999-02-01</date_of_birth>
+				<address>Uttar Pradesh</address>
+			</personal_data>
+			<account account_type="saving_account" account_no="acc4">
+				<balance>200000000</balance>
+				<transactions>
+					<date>2021-02-20</date>
+					<deposit><amount>21000000</amount></deposit>
+				</transactions>
+				<transactions>
+					<date>2021-02-28</date>
+					<transfer from="acc4" to="acc1"><amount>12400</amount></transfer>
+				</transactions>
+			</account>
+		</customer>
+		
+		<customer customer_id="cust4" customer_since_years="1">
+			<personal_data>
+				<name>Shree Kanti</name>
+				<date_of_birth>1999-02-06</date_of_birth>
+				<address>Bihar</address>
+			</personal_data>
+			<account account_type="basic_account" account_no="acc5">
+				<balance>500000000</balance>
+				<transactions>
+					<date>2021-03-03</date>
+					<deposit><amount>3000</amount></deposit>
+				</transactions>
+				<transactions>
+					<date>2021-03-23</date>
+					<deposit><amount>50000</amount></deposit>
+				</transactions>
+			</account>
+			<loan loan_number="loan1">
+				<amount>200000</amount>
+			</loan>
+		</customer>
+		
+		<customer customer_id="cust5" customer_since_years="3">
+			<personal_data>
+				<name>Shreyas Jain</name>
+				<date_of_birth>1999-01-08</date_of_birth>
+				<address>Madhya Pradesh</address>
+			</personal_data>
+			<account account_type="saving_account" account_no="acc6">
+				<balance>25000000</balance>
+				<transactions>
+					<date>2021-01-04</date>
+					<withdraw><amount>60000</amount></withdraw>
+				</transactions>
+				<transactions>
+					<date>2021-01-05</date>
+					<transfer from="acc4" to="acc6"><amount>900000</amount></transfer>
+				</transactions>
+				<transactions>
+					<date>2021-01-06</date>
+					<deposit><amount>50000</amount></deposit>
+				</transactions>
+			</account>
+		</customer>
+		
+		<customer customer_id="cust6" customer_since_years="8">
+			<personal_data>
+				<name>Narendra Modi</name>
+				<date_of_birth>1965-01-21</date_of_birth>
+				<address>Gujarat</address>
+			</personal_data>
+			<account account_type="basic_account" account_no="acc7">
+				<balance>8000000</balance>
+				<transactions>
+					<date>2014-01-13</date>
+					<deposit><amount>60000</amount></deposit>
+				</transactions>
+				<transactions>
+					<date>2015-02-25</date>
+					<deposit><amount>10000</amount></deposit>
+				</transactions>
+				<transactions>
+					<date>2021-03-04</date>
+					<withdraw><amount>500000</amount></withdraw>
+				</transactions>
+			</account>
+		</customer>
+
+		<customer customer_id="cust7" customer_since_years="6">
+			<personal_data>
+				<name>Amit Sah</name>
+				<date_of_birth>1965-07-30</date_of_birth>
+				<address>Gujarat</address>
+			</personal_data>
+			<account account_type="saving_account" account_no="acc8">
+				<balance>210000000</balance>
+				<transactions>
+					<date>2019-12-01</date>
+					<deposit><amount>500000</amount></deposit>
+				</transactions>
+			</account>
+			<account account_type="basic_account" account_no="acc9">
+				<balance>20000000</balance>
+				<transactions>
+					<date>2018-07-08</date>
+					<deposit><amount>800000</amount></deposit>
+				</transactions>
+			</account>
+			<loan loan_number="loan2">
+				<amount>7000000000</amount>
+			</loan>
+		</customer>
+
+		<customer customer_id="cust8" customer_since_years="5">
+			<personal_data>
+				<name>Rahul  Gandhi</name>
+				<date_of_birth>1980-07-11</date_of_birth>
+				<address>Uttar Pradesh</address>
+			</personal_data>
+			<account account_type="saving_account" account_no="acc10">
+				<balance>10000</balance>
+				<transactions>
+					<date>2021-10-16</date>
+					<deposit><amount>1500000</amount></deposit>
+				</transactions>
+				<transactions>
+					<date>2021-04-17</date>
+					<withdraw><amount>750</amount></withdraw>
+				</transactions>
+				<transactions>
+					<date>2021-01-25</date>
+					<transfer from="acc10" to="acc6"><amount>20000000</amount></transfer>
+				</transactions>
+			</account>
+		</customer>
+		
+		
+		<customer customer_id="cust9" customer_since_years="20">
+			<personal_data>
+				<name>Sonia Gandhi</name>
+				<date_of_birth>1960-05-08</date_of_birth>
+				<address>Italy</address>
+			</personal_data>
+			<account account_type="basic_account" account_no="acc11">
+				<balance>50000000</balance>
+				<transactions>
+					<date>2017-12-01</date>
+					<deposit><amount>200000</amount></deposit>
+				</transactions>
+				<transactions>
+					<date>2018-02-13</date>
+					<withdraw><amount>7000000</amount></withdraw>
+				</transactions>
+			</account>
+			<loan loan_number="loan3">
+				<amount>5000000000</amount>
+			</loan>
+		</customer>
+
+		<customer customer_id="cust10" customer_since_years="20">
+			<personal_data>
+				<name>Jawahar Lal Nehru</name>
+				<date_of_birth>1875-11-14</date_of_birth>
+				<address>Chennai</address>
+			</personal_data>
+			<account account_type="saving_account" account_no="acc12">
+				<balance>500000000</balance>
+				<transactions>
+					<date>2019-02-10</date>
+					<deposit><amount>40000000</amount></deposit>
+				</transactions>
+				<transactions>
+					<date>2019-02-11</date>
+					<withdraw><amount>50000000</amount></withdraw>
+				</transactions>
+				<transactions>
+					<date>2019-04-11</date>
+					<deposit><amount>1000000</amount></deposit>
+				</transactions>
+				<transactions>
+					<date>2019-06-01</date>
+					<withdraw><amount>30000000</amount></withdraw>
+				</transactions>
+				<transactions>
+					<date>2019-08-21</date>
+					<withdraw><amount>10000000</amount></withdraw>
+				</transactions>
+			</account>
+		</customer>
+
+		<customer customer_id="cust11" customer_since_years="20">
+			<personal_data>
+				<name>Nitish Kumar</name>
+				<date_of_birth>1965-06-26</date_of_birth>
+				<address>Chennai</address>
+			</personal_data>
+			<account account_type="saving_account" account_no="acc13">
+				<balance>7000000000</balance>
+				<transactions>
+					<date>2020-01-12</date>
+					<deposit><amount>2000000</amount></deposit>
+				</transactions>
+				<transactions>
+					<date>2020-01-15</date>
+					<transfer from="acc13" to="acc1"><amount>500000</amount></transfer>
+				</transactions>
+				<transactions>
+					<date>2020-02-01</date>
+					<deposit><amount>70000000</amount></deposit>
+				</transactions>
+				<transactions>
+					<date>2020-03-11</date>
+					<withdraw><amount>90000000</amount></withdraw>
+				</transactions>
+			</account>
+		</customer>
+		
+		<customer customer_id="cust12" customer_since_years="40">
+			<personal_data>
+				<name>Jack Ma</name>
+				<date_of_birth>1970-04-14</date_of_birth>
+				<address>China</address>
+			</personal_data>
+			<account account_type="saving_account" account_no="acc14">
+				<balance>5000000</balance>
+				<transactions>
+					<date>2019-09-01</date>
+					<deposit><amount>2000000</amount></deposit>
+				</transactions>
+			</account>
+			<account account_type="basic_account" account_no="acc15">
+				<balance>50000000</balance>
+				<transactions>
+					<date>2020-04-01</date>
+					<deposit><amount>2000000000</amount></deposit>
+				</transactions>
+			</account>
+		</customer>
+		
+		<customer customer_id="cust13" customer_since_years="20">
+			<personal_data>
+				<name>Shahrukh Khan</name>
+				<date_of_birth>1975-11-01</date_of_birth>
+				<address>Mumbai</address>
+			</personal_data>
+			<account account_type="saving_account" account_no="acc16">
+				<balance>1500000000</balance>
+				<transactions>
+					<date>2019-01-06</date>
+					<withdraw><amount>10000000</amount></withdraw>
+				</transactions>
+			</account>
+			<account account_type="basic_account" account_no="acc17">
+				<balance>8000000000</balance>
+				<transactions>
+					<date>2021-03-11</date>
+					<deposit><amount>20000000</amount></deposit>
+				</transactions>
+			</account>
+			<loan loan_number="loan4">
+				<amount>700000000</amount>
+			</loan>
+		</customer>
+		
+		<employee employee_id="emp1" salary="1000000">
+			<personal_data>
+				<name>Mark Zuckerbarg</name>
+				<date_of_birth>1971-01-04</date_of_birth>
+				<address>USA</address>
+			</personal_data>
+			<manager subordinates="emp2 emp3 emp4 emp5"></manager>		
+		</employee>
+		
+		<employee employee_id="emp2" salary="4000000">
+			<personal_data>
+				<name>Bill Gates</name>
+				<date_of_birth>1988-12-06</date_of_birth>
+				<address>USA</address>
+			</personal_data>
+			<technician maintains="ATM1 ATM2"></technician>
+		</employee>
+		
+		<employee employee_id="emp3" salary="2000000">
+			<personal_data>
+				<name>Sachin Bansal</name>
+				<date_of_birth>1972-11-01</date_of_birth>
+				<address>Delhi</address>
+			</personal_data>
+			<customer_care responsible_for="cust1 cust2 cust5"></customer_care>
+		</employee>
+		
+		<employee employee_id="emp4" salary="8000000">
+			<personal_data>
+				<name>Binny Bansal</name>
+				<date_of_birth>1973-06-04</date_of_birth>
+				<address>Delhi</address>
+			</personal_data>
+			<customer_care responsible_for="cust3 cust4"></customer_care>
+		</employee>
+		
+		<employee employee_id="emp5" salary="4000000">
+			<personal_data>
+				<name>Kunal Shah</name>
+				<date_of_birth>1978-02-07</date_of_birth>
+				<address>Karnataka</address>
+			</personal_data>
+			<customer_support responsible_for="cust1 cust2 cust3 cust4 cust5"></customer_support>
+		</employee>
+		
+		
+		<employee employee_id="emp6" salary="5000000">
+			<personal_data>
+				<name>Larry Page</name>
+				<date_of_birth>1979-07-05</date_of_birth>
+				<address>USA</address>
+			</personal_data>
+			<technician maintains="ATM3 ATM4 ATM5"></technician>
+		</employee>
+		
+		<employee employee_id="emp7" salary="3000000">
+			<personal_data>
+				<name>Sergey Bin</name>
+				<date_of_birth>1977-07-02</date_of_birth>
+				<address>USA</address>
+			</personal_data>
+			<customer_care responsible_for="cust6 cust7 cust8 cust9 cust10 cust11 cust12 cust13"></customer_care>
+		</employee>
+		
+		<employee employee_id="emp8" salary="5000000">
+			<personal_data>
+				<name>George Bush</name>
+				<date_of_birth>1960-07-13</date_of_birth>
+				<address>USA</address>
+			</personal_data>
+			<customer_support responsible_for="cust6 cust7 cust8 cust9 cust10 cust11 cust12 cust13"></customer_support>
+		</employee>
+	
+		<employee employee_id="emp9" salary="15000000">
+			<personal_data>
+				<name>Sundar Pichai</name>
+				<date_of_birth>1975-03-15</date_of_birth>
+				<address>Chennai</address>
+			</personal_data>
+			<manager subordinates="emp1 emp6 emp7 emp8"></manager>		
+		</employee>
+		
+		<atm atm_id="ATM1" days_to_maintainance="10">50000</atm>
+		<atm atm_id="ATM2" days_to_maintainance="11">75000</atm>
+		<atm atm_id="ATM3" days_to_maintainance="12">25000</atm>
+		<atm atm_id="ATM4" days_to_maintainance="13">20000</atm>
+		<atm atm_id="ATM5" days_to_maintainance="14">35000</atm>
+		<atm atm_id="ATM6" days_to_maintainance="15">50000</atm>
+		<atm atm_id="ATM7" days_to_maintainance="17">30000</atm>
+	</branch>
+</Bank>
